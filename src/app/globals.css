@@ -1,0 +1,470 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   BLUE LOTUS EVENTS & DECORS
+   Global Design System
+   ========================================================= */
+
+:root {
+  /* Brand Colors */
+  --lotus-midnight: #0b1f3a;
+  --lotus-blue: #2457a6;
+  --lotus-indigo: #5b4b8a;
+  --lotus-champagne: #d6b773;
+  --lotus-ivory: #faf7f0;
+  --lotus-mist: #e8eff6;
+  --lotus-blush: #d9a6ae;
+  --lotus-sage: #8fa695;
+
+  /* Layout */
+  --site-max-width: 1440px;
+
+  /* Motion */
+  --lotus-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--lotus-ivory);
+  color: var(--lotus-midnight);
+  font-family: var(--font-montserrat), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--lotus-blue);
+  color: var(--lotus-ivory);
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.font-display {
+  font-family: var(--font-cormorant), serif;
+}
+
+.font-sans {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.font-telugu {
+  font-family: var(--font-telugu), sans-serif;
+}
+
+.font-devanagari {
+  font-family: var(--font-devanagari), serif;
+}
+
+/* Large editorial headings */
+
+.display-title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: 0.01em;
+}
+
+/* Section headings */
+
+.section-title {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  color: var(--lotus-midnight);
+}
+
+.section-copy {
+  max-width: 680px;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: rgba(11, 31, 58, 0.66);
+}
+
+/* Small editorial labels */
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lotus-blue);
+}
+
+/* =========================================================
+   SITE CONTAINER
+   ========================================================= */
+
+.site-container {
+  width: min(
+    calc(100% - 2.5rem),
+    var(--site-max-width)
+  );
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    width: min(
+      calc(100% - 3rem),
+      var(--site-max-width)
+    );
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    width: min(
+      calc(100% - 4rem),
+      var(--site-max-width)
+    );
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-container {
+    width: min(
+      calc(100% - 5rem),
+      var(--site-max-width)
+    );
+  }
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+  padding-block: 5rem;
+}
+
+.section-tight {
+  padding-block: 3.5rem;
+}
+
+.section-large {
+  padding-block: 7rem;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-block: 3.75rem;
+  }
+
+  .section-tight {
+    padding-block: 2.75rem;
+  }
+
+  .section-large {
+    padding-block: 5rem;
+  }
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid var(--lotus-blue);
+  border-radius: 2px;
+  background: var(--lotus-blue);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lotus-ivory);
+  text-decoration: none;
+  transition:
+    background-color 300ms var(--lotus-ease),
+    border-color 300ms var(--lotus-ease),
+    color 300ms var(--lotus-ease),
+    transform 300ms var(--lotus-ease);
+}
+
+.btn-primary:hover {
+  border-color: var(--lotus-midnight);
+  background: var(--lotus-midnight);
+  color: var(--lotus-ivory);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Secondary button */
+
+.btn-secondary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(11, 31, 58, 0.2);
+  border-radius: 2px;
+  background: transparent;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lotus-midnight);
+  text-decoration: none;
+  transition:
+    border-color 300ms var(--lotus-ease),
+    background-color 300ms var(--lotus-ease),
+    color 300ms var(--lotus-ease);
+}
+
+.btn-secondary:hover {
+  border-color: var(--lotus-blue);
+  color: var(--lotus-blue);
+  background: rgba(36, 87, 166, 0.03);
+}
+
+/* Text link */
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(36, 87, 166, 0.55);
+  padding-bottom: 0.3rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lotus-blue);
+  text-decoration: none;
+  transition:
+    color 300ms var(--lotus-ease),
+    border-color 300ms var(--lotus-ease);
+}
+
+.btn-link:hover {
+  border-color: var(--lotus-midnight);
+  color: var(--lotus-midnight);
+}
+
+/* =========================================================
+   EDITORIAL IMAGE
+   ========================================================= */
+
+.image-editorial {
+  overflow: hidden;
+  background: var(--lotus-mist);
+}
+
+.image-editorial img {
+  transition:
+    transform 900ms var(--lotus-ease),
+    filter 700ms var(--lotus-ease);
+}
+
+.image-editorial:hover img {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.lotus-card {
+  border: 1px solid rgba(11, 31, 58, 0.09);
+  border-radius: 2px;
+  background: var(--lotus-ivory);
+  box-shadow: 0 8px 30px rgba(11, 31, 58, 0.06);
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+.lotus-input {
+  width: 100%;
+  border: 1px solid rgba(11, 31, 58, 0.16);
+  border-radius: 2px;
+  background: transparent;
+  padding: 0.8rem 0.9rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.8125rem;
+  color: var(--lotus-midnight);
+  outline: none;
+  transition:
+    border-color 250ms var(--lotus-ease),
+    box-shadow 250ms var(--lotus-ease);
+}
+
+.lotus-input::placeholder {
+  color: rgba(11, 31, 58, 0.38);
+}
+
+.lotus-input:focus {
+  border-color: var(--lotus-blue);
+  box-shadow: 0 0 0 3px rgba(36, 87, 166, 0.08);
+}
+
+/* =========================================================
+   BRAND PETAL MOTIF
+   Based on the precise 45° petal unit
+   ========================================================= */
+
+.lotus-petal {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+  border: 1px solid rgba(214, 183, 115, 0.6);
+}
+
+.lotus-petal::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(214, 183, 115, 0.3);
+}
+
+/* =========================================================
+   BRAND RIPPLE MOTIF
+   ========================================================= */
+
+.lotus-ripple {
+  position: absolute;
+  border: 1px solid rgba(36, 87, 166, 0.1);
+  border-radius: 9999px;
+}
+
+/* =========================================================
+   TRANSITIONS
+   ========================================================= */
+
+.ease-lotus-ease {
+  transition-timing-function: var(--lotus-ease);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  transition-timing-function: var(--lotus-ease);
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--lotus-blue);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+html {
+  scrollbar-color: var(--lotus-blue) var(--lotus-ivory);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lotus-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(36, 87, 166, 0.45);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lotus-blue);
+}
+
+/* =========================================================
+   MOBILE TYPOGRAPHY
+   ========================================================= */
+
+@media (max-width: 639px) {
+  .section-title {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .section-copy {
+    font-size: 0.8125rem;
+    line-height: 1.85;
+  }
+
+  .eyebrow {
+    font-size: 0.5625rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
