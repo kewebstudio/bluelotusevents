@@ -574,7 +574,7 @@ export default function AboutPage() {
               <div className="relative h-[320px] overflow-hidden sm:h-[450px]">
 
                 <Image
-                  src="/images/gallery/wedding/55.JPG"
+                  src="/images/gallery/wedding/64.JPG"
                   alt="Blue Lotus event experience"
                   fill
                   sizes="(max-width: 768px) 90vw, 45vw"
