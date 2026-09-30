@@ -136,9 +136,21 @@ export const metadata: Metadata = {
   ------------------------------------------------- */
 
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      {
+        url: "/favicon.png?v=2",
+        type: "image/png",
+      },
+    ],
+
+    shortcut: "/favicon.png?v=2",
+
+    apple: [
+      {
+        url: "/favicon.png?v=2",
+        type: "image/png",
+      },
+    ],
   },
 };
 

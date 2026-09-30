@@ -33,21 +33,21 @@ const testimonials = [
     name: "Rashmitha",
     review:
       "Decor was speechless & very nicely decorated. At home they decorated very nicely. Wedding mandapam & entrance was fabulous 😍. And the team was friendly.",
-    image: "/images/gallery/wedding/5.jpg",
+    image: "/images/gallery/wedding/5.JPG",
   },
 
   {
     name: "Priya K.",
     review:
       "Absolutely loved the décor! Everything was so elegant and perfectly arranged. It made our event truly special.",
-    image: "/images/gallery/events/96.jpg",
+    image: "/images/gallery/events/96.JPG",
   },
 
   {
     name: "Karthik M.",
     review:
       "From planning to execution, everything was smooth and stress-free. Highly recommended for any event décor.",
-    image: "/images/gallery/events/38.jpg",
+    image: "/images/gallery/events/38.JPG",
   },
 
   {
@@ -61,7 +61,7 @@ const testimonials = [
     name: "AVS Ramachandra Rao",
     review:
       "We thank you for having provided us with the resources and the support. It was a smooth sail due to the above. We also thank that you were monitoring the same so that things should move as per plan and as desired.",
-    image: "/images/gallery/events/16.jpg",
+    image: "/images/gallery/events/16.JPG",
   },
 ];
 
