@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
+import Testimonials from "@/components/Testimonials";
 import Enquiry from "@/components/Enquiry";
 
 export default function Home() {
@@ -28,6 +29,11 @@ export default function Home() {
         <Gallery />
       </section>
 
+      {/* TESTIMONIALS */}
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
       {/* ENQUIRY */}
       <section id="enquiry">
         <Enquiry />
@@ -35,4 +41,4 @@ export default function Home() {
 
     </main>
   );
-} 
+}

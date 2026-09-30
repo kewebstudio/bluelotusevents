@@ -401,6 +401,13 @@ export default function Navbar() {
           }
         }
 
+        @keyframes navGlow {
+          0%,
+          100% {
+            opacity: 0.15;
+            transform: scale(1);
+          }
+
           50% {
             opacity: 0.35;
             transform: scale(1.12);
@@ -560,9 +567,11 @@ export default function Navbar() {
 
         {/* MAIN BAR */}
 
-        <div className="relative mx-auto flex h-[64px] max-w-[1400px] items-center justify-between px-4 sm:px-7 lg:px-10">
+        <div className="relative mx-auto flex h-[70px] max-w-[1400px] items-center justify-between px-4 sm:px-7 lg:px-10">
 
-          {/* LOGO */}
+          {/* =================================================
+              LOGO
+          ================================================== */}
 
           <Link
             href="/"
@@ -571,23 +580,23 @@ export default function Navbar() {
               setMenuOpen(false)
             }
           >
-            <div className="relative transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-[1.04]">
+            <div className="relative transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-[1.03]">
 
               <Image
-                src="/blue-lotus-lockup-primary.svg"
+                src="/logo.png"
                 alt="Blue Lotus Events & Decors"
                 width={225}
                 height={70}
                 priority
-                className="relative z-10 h-auto w-[175px] sm:w-[195px] lg:w-[215px] xl:w-[225px]"
+                className="relative z-10 h-auto w-[85px] sm:w-[150px] lg:w-[170px] xl:w-[180px]"
               />
-
-
 
             </div>
           </Link>
 
-          {/* DESKTOP NAV */}
+          {/* =================================================
+              DESKTOP NAV
+          ================================================== */}
 
           <nav className="hidden items-center gap-7 lg:flex">
 
@@ -611,7 +620,9 @@ export default function Navbar() {
 
           </nav>
 
-          {/* RIGHT */}
+          {/* =================================================
+              RIGHT
+          ================================================== */}
 
           <div className="flex items-center gap-2.5">
 
@@ -654,13 +665,19 @@ export default function Navbar() {
             </button>
 
             {/* MOBILE CONTACT ACTIONS */}
+
             <div className="flex items-center gap-2 lg:hidden">
+
               <a
                 href="tel:+917416242200"
                 aria-label="Call Blue Lotus Events"
                 className="flex h-9 w-9 items-center justify-center border border-[#2457A6]/20 text-[#2457A6] transition-colors duration-300 hover:border-[#2457A6] hover:bg-[#2457A6] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6B773]"
               >
-                <Phone size={17} strokeWidth={1.7} aria-hidden="true" />
+                <Phone
+                  size={17}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
               </a>
 
               <a
@@ -676,6 +693,7 @@ export default function Navbar() {
                   aria-hidden="true"
                 />
               </a>
+
             </div>
 
             {/* MOBILE BUTTON */}
