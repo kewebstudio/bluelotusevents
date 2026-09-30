@@ -588,7 +588,7 @@ export default function Navbar() {
                 width={225}
                 height={70}
                 priority
-                className="relative z-10 h-auto w-[85px] sm:w-[150px] lg:w-[170px] xl:w-[180px]"
+                className="relative z-10 h-auto w-[75px] sm:w-[100px] lg:w-[90px] xl:w-[75px]"
               />
 
             </div>

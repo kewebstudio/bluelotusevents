@@ -19,7 +19,6 @@ import { useEffect, useState } from "react";
 
 /* =========================================================
    TESTIMONIAL DATA
-   Each review now has its own image.
 ========================================================= */
 
 const testimonials = [
@@ -27,8 +26,6 @@ const testimonials = [
     name: "Padmaja",
     review:
       "I want to thank you from the bottom of my heart for all your hard work. You did a fantastic job! 👏 A kudos to you and your team for making this event so special for us all.",
-
-    // Existing image verified from your current component
     image: "/images/gallery/wedding/h1.jpg",
   },
 
@@ -36,8 +33,6 @@ const testimonials = [
     name: "Rashmitha",
     review:
       "Decor was speechless & very nicely decorated. At home they decorated very nicely. Wedding mandapam & entrance was fabulous 😍. And the team was friendly.",
-
-    // CHANGE THIS to Rashmitha's actual event image
     image: "/images/gallery/wedding/5.jpg",
   },
 
@@ -45,8 +40,6 @@ const testimonials = [
     name: "Priya K.",
     review:
       "Absolutely loved the décor! Everything was so elegant and perfectly arranged. It made our event truly special.",
-
-    // CHANGE THIS to Priya's actual event image
     image: "/images/gallery/events/96.jpg",
   },
 
@@ -54,8 +47,6 @@ const testimonials = [
     name: "Karthik M.",
     review:
       "From planning to execution, everything was smooth and stress-free. Highly recommended for any event décor.",
-
-    // CHANGE THIS to Karthik's actual event image
     image: "/images/gallery/events/38.jpg",
   },
 
@@ -63,8 +54,6 @@ const testimonials = [
     name: "Sneha R.",
     review:
       "Highly professional and creative. The setup exceeded our expectations. Thank you for making our day memorable!",
-
-    // CHANGE THIS to Sneha's actual event image
     image: "/images/gallery/birthday/15.jpg",
   },
 
@@ -72,8 +61,6 @@ const testimonials = [
     name: "AVS Ramachandra Rao",
     review:
       "We thank you for having provided us with the resources and the support. It was a smooth sail due to the above. We also thank that you were monitoring the same so that things should move as per plan and as desired.",
-
-    // CHANGE THIS to AVS Ramachandra Rao's actual event image
     image: "/images/gallery/events/16.jpg",
   },
 ];
@@ -84,11 +71,6 @@ export default function Testimonials() {
 
   const shouldReduceMotion = useReducedMotion();
 
-  /*
-   * Current testimonial.
-   *
-   * Both the review AND image come from this object.
-   */
   const current = testimonials[active];
 
   /* =========================================================
@@ -101,23 +83,19 @@ export default function Testimonials() {
 
     if (!element) return;
 
-    const observer =
-      new IntersectionObserver(
-        ([entry]) => {
-          setIsVisible(
-            entry.isIntersecting
-          );
-        },
-        {
-          rootMargin: "250px 0px",
-          threshold: 0,
-        }
-      );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        rootMargin: "250px 0px",
+        threshold: 0,
+      }
+    );
 
     observer.observe(element);
 
-    return () =>
-      observer.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   /* =========================================================
@@ -127,8 +105,7 @@ export default function Testimonials() {
   const nextReview = () => {
     setActive(
       (currentIndex) =>
-        (currentIndex + 1) %
-        testimonials.length
+        (currentIndex + 1) % testimonials.length
     );
   };
 
@@ -156,13 +133,11 @@ export default function Testimonials() {
     const interval = setInterval(() => {
       setActive(
         (currentIndex) =>
-          (currentIndex + 1) %
-          testimonials.length
+          (currentIndex + 1) % testimonials.length
       );
     }, 5500);
 
-    return () =>
-      clearInterval(interval);
+    return () => clearInterval(interval);
   }, [isVisible]);
 
   return (
@@ -171,20 +146,14 @@ export default function Testimonials() {
       className="relative overflow-hidden bg-[#faf8f3] px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
     >
       {/* =====================================================
-          LIGHTWEIGHT BACKGROUND
+          BACKGROUND
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-        {/* BLUE GLOW */}
-
         <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#3159b5]/[0.035] blur-3xl" />
 
-        {/* GOLD GLOW */}
-
         <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#c99a45]/[0.05] blur-3xl" />
-
-        {/* SPARKLES */}
 
         <Sparkles
           size={19}
@@ -206,7 +175,7 @@ export default function Testimonials() {
       <div className="relative mx-auto max-w-[1180px]">
 
         {/* ===================================================
-            HEADING
+            SECTION HEADING
         ==================================================== */}
 
         <motion.div
@@ -233,6 +202,8 @@ export default function Testimonials() {
           }}
           className="mb-9 text-center"
         >
+
+          {/* Label */}
 
           <div className="mb-3 flex items-center justify-center gap-3">
 
@@ -274,12 +245,16 @@ export default function Testimonials() {
 
           </div>
 
-          <h2 className="font-serif text-4xl leading-[1.05] text-[#16284a] sm:text-5xl lg:text-6xl">
+          {/* Main heading */}
+
+          <h2 className="font-serif text-4xl font-medium leading-[1.05] text-[#16284a] sm:text-5xl lg:text-6xl">
             Loved by our{" "}
             <span className="text-[#3159b5]">
               clients.
             </span>
           </h2>
+
+          {/* Supporting text */}
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-[#667085] sm:text-base">
             Real experiences from people who
@@ -318,13 +293,15 @@ export default function Testimonials() {
           className="group relative mx-auto max-w-[1050px]"
         >
 
-          {/* SOFT GLOW */}
+          {/* Soft glow */}
 
           <div className="pointer-events-none absolute -inset-2 bg-gradient-to-r from-[#3159b5]/[0.05] via-[#c99a45]/[0.08] to-[#3159b5]/[0.05] blur-xl" />
 
+          {/* Card */}
+
           <div className="relative overflow-hidden border border-[#e5dfd4] bg-white shadow-[0_20px_60px_rgba(22,40,74,0.08)] transition-shadow duration-500 group-hover:shadow-[0_25px_70px_rgba(22,40,74,0.12)]">
 
-            {/* GOLD TOP LINE */}
+            {/* Gold top line */}
 
             <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#c99a45] to-[#3159b5]" />
 
@@ -336,14 +313,8 @@ export default function Testimonials() {
 
               <div className="relative min-h-[300px] overflow-hidden bg-[#17294d] sm:min-h-[340px] md:min-h-[390px]">
 
-                {/* =================================================
-                    IMPORTANT:
-                    IMAGE NOW CHANGES WITH THE REVIEW
-                ================================================== */}
+                <AnimatePresence mode="wait">
 
-                <AnimatePresence
-                  mode="wait"
-                >
                   <motion.div
                     key={current.image}
                     initial={{
@@ -372,6 +343,7 @@ export default function Testimonials() {
                     }}
                     className="absolute inset-0"
                   >
+
                     <Image
                       src={current.image}
                       alt={`${current.name} testimonial`}
@@ -380,33 +352,29 @@ export default function Testimonials() {
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
+
                   </motion.div>
+
                 </AnimatePresence>
 
-                {/* =================================================
-                    IMAGE OVERLAY
-                ================================================== */}
+                {/* Image overlay */}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1c39]/85 via-[#0c1c39]/15 to-transparent" />
 
-                {/* HOVER LIGHT */}
+                {/* Hover light */}
 
                 <div className="pointer-events-none absolute inset-y-0 -left-1/3 z-10 w-1/3 skew-x-[-15deg] bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 blur-xl transition-all duration-700 group-hover:left-full group-hover:opacity-100" />
 
-                {/* DECORATIVE CIRCLE */}
+                {/* Decorative circle */}
 
                 <div className="absolute right-5 top-5 h-20 w-20 rounded-full border border-white/25" />
-
-                {/* SPARKLE */}
 
                 <Sparkles
                   size={18}
                   className="absolute right-10 top-10 text-white/80"
                 />
 
-                {/* =================================================
-                    IMAGE TEXT
-                ================================================== */}
+                {/* Image text */}
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
 
@@ -414,7 +382,7 @@ export default function Testimonials() {
                     Blue Lotus
                   </p>
 
-                  <h3 className="mt-2 font-serif text-2xl text-white sm:text-3xl">
+                  <h3 className="mt-2 font-serif text-2xl font-medium text-white sm:text-3xl">
                     Moments made magical.
                   </h3>
 
@@ -423,12 +391,12 @@ export default function Testimonials() {
               </div>
 
               {/* =================================================
-                  REVIEW
+                  REVIEW CONTENT
               ================================================== */}
 
               <div className="relative flex min-h-[300px] flex-col justify-center overflow-hidden p-7 sm:min-h-[340px] sm:p-9 lg:p-12">
 
-                {/* BACKGROUND QUOTE */}
+                {/* Background quote */}
 
                 <Quote
                   size={110}
@@ -464,7 +432,7 @@ export default function Testimonials() {
                     className="relative"
                   >
 
-                    {/* STARS */}
+                    {/* Stars */}
 
                     <div className="mb-5 flex gap-1.5">
 
@@ -481,23 +449,27 @@ export default function Testimonials() {
 
                     </div>
 
-                    {/* REVIEW */}
+                    {/* =================================================
+                        REVIEW TEXT
 
-                    <p className="max-w-2xl font-serif text-xl leading-[1.55] text-[#263653] sm:text-2xl lg:text-[27px]">
+                        Website body font — NOT heading font.
+                    ================================================== */}
+
+                    <p className="max-w-2xl text-[17px] font-normal leading-[1.65] tracking-[-0.01em] text-[#263653] sm:text-[18px] lg:text-[19px]">
                       “{current.review}”
                     </p>
 
-                    {/* PERSON */}
+                    {/* Client */}
 
                     <div className="mt-7 flex items-end justify-between gap-4">
 
                       <div>
 
-                        <p className="font-serif text-lg text-[#16284a]">
+                        <p className="text-base font-semibold tracking-[-0.01em] text-[#16284a] sm:text-lg">
                           {current.name}
                         </p>
 
-                        <div className="mt-1.5 flex items-center gap-2">
+                        <div className="mt-2 flex items-center gap-2">
 
                           <span className="h-px w-6 bg-[#c99a45]" />
 
@@ -535,9 +507,7 @@ export default function Testimonials() {
 
         <div className="mx-auto mt-6 flex max-w-[1050px] items-center justify-between">
 
-          {/* =================================================
-              DOTS
-          ================================================== */}
+          {/* Dots */}
 
           <div className="flex items-center gap-2">
 
@@ -552,6 +522,7 @@ export default function Testimonials() {
                   aria-label={`View review from ${item.name}`}
                   className="group/dot flex items-center"
                 >
+
                   <span
                     className={`block h-1.5 rounded-full transition-all duration-500 ${
                       active === index
@@ -559,15 +530,14 @@ export default function Testimonials() {
                         : "w-1.5 bg-[#cfc8bc] group-hover/dot:bg-[#c99a45]"
                     }`}
                   />
+
                 </button>
               )
             )}
 
           </div>
 
-          {/* =================================================
-              ARROWS
-          ================================================== */}
+          {/* Arrows */}
 
           <div className="flex gap-2">
 
